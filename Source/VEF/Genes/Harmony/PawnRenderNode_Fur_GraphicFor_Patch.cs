@@ -10,7 +10,7 @@ namespace VEF.Genes
     {
         public static void Postfix(PawnRenderNode_Fur __instance, Pawn pawn, ref Graphic __result)
         {
-            if (__instance.gene != null)
+            if (pawn.story?.furDef != null && __instance.gene != null)
             {
                 GeneExtension extension = __instance.gene.def.GetModExtension<GeneExtension>();
                 if (extension != null)
